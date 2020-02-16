@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{38651047
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomato", "app\Tomato\Tomato.csproj", "{61B45952-93D3-4CA5-AB9B-F169993C2F6E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tomato.Timer", "src\Tomato.Timer\Tomato.Timer.csproj", "{B9883512-04CF-4BF5-9187-02CD2341F525}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{61B45952-93D3-4CA5-AB9B-F169993C2F6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61B45952-93D3-4CA5-AB9B-F169993C2F6E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{61B45952-93D3-4CA5-AB9B-F169993C2F6E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B9883512-04CF-4BF5-9187-02CD2341F525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9883512-04CF-4BF5-9187-02CD2341F525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9883512-04CF-4BF5-9187-02CD2341F525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9883512-04CF-4BF5-9187-02CD2341F525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{61B45952-93D3-4CA5-AB9B-F169993C2F6E} = {0655CD17-D220-4D4E-A42C-5861F9EBA002}
+		{B9883512-04CF-4BF5-9187-02CD2341F525} = {DD916F35-1BB9-4B04-A536-D51B15F19C7B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BE2196F-1182-41A7-8CB1-6D02D17B4CE1}
