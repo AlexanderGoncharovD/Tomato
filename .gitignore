@@ -1,2 +1,3 @@
 .vs
-Tomato/obj
+app/Tomato/obj
+src/Tomato.Timer/obj
