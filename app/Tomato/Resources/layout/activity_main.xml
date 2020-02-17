@@ -1,6 +1,5 @@
 
 
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,23 +7,41 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent">
-    <include
+    <Toolbar
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"/>
-    <TextView
-        android:text="00:00"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="200px"
-        android:minHeight="100px"
-        android:id="@+id/lbl"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        android:title="Tomato Method"
+        android:titleTextColor="#FFFFFF">
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="#00000000"
+            android:src="@mipmap/baseline_settings_white_36"
+            android:layout_marginRight="20px"
+            android:id="@+id/settings_button"/>
+    </Toolbar>
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:background="@layout/circle"
         android:layout_gravity="center"
-        android:layout_marginTop="60px"
-        android:foregroundGravity="center"
-        android:textAlignment="center"
-        android:textSize="@dimen/abc_action_bar_content_inset_with_nav"
-        android:textColor="#ff424257" />
+        android:layout_marginTop="60dp">
+        <TextView
+            android:text="00:00"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lbl"
+            android:textSize="@dimen/abc_action_bar_content_inset_with_nav"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_gravity="center"
+            android:layout_marginLeft="35dp" />
+    </LinearLayout>
     <Button
         android:text="Start"
         android:layout_width="wrap_content"
@@ -45,4 +62,3 @@
         android:id="@+id/stop_button" />
 
 </LinearLayout>
-
