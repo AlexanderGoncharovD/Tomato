@@ -24,13 +24,15 @@
             android:layout_marginRight="20px"
             android:id="@+id/settings_button"/>
     </Toolbar>
-
-    <LinearLayout
+    <include
+        android:id="@+id/progressBar"
+        layout="@layout/circle"/>
+    <!--<LinearLayout
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:background="@layout/circle"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp">
+        android:layout_marginTop="60dp">-->
         <TextView
             android:text="00:00"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -41,7 +43,7 @@
             android:textColor="@color/colorPrimaryDark"
             android:layout_gravity="center"
             android:layout_marginLeft="35dp" />
-    </LinearLayout>
+    <!--</LinearLayout>-->
     <Button
         android:text="Start"
         android:layout_width="wrap_content"
