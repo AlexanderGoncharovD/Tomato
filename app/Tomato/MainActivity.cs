@@ -7,6 +7,7 @@ using System;
 using Android.Views;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
+using Tomato.Settings;
 
 namespace Tomato
 {
@@ -28,7 +29,8 @@ namespace Tomato
 
             var toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-            SetStatusBarColor();
+
+            AppSettings.SetDefaultColorStatusBar(this);
             
             lbl = FindViewById<TextView>(Resource.Id.lbl);
             _startButton = FindViewById<Button>(Resource.Id.start_button);
@@ -51,7 +53,7 @@ namespace Tomato
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
@@ -95,17 +97,6 @@ namespace Tomato
             Vibration(TimeSpan.FromSeconds(1));
         }
 
-        /// <summary>
-        ///     Устанавливает цвет статус бара
-        /// </summary>
-        private void SetStatusBarColor()
-        {
-            var color = ColorConverters.FromHex("#1B3147").ToPlatformColor();
-
-            Window.AddFlags(WindowManagerFlags.DrawsSystemBarBackgrounds);
-            Window.ClearFlags(WindowManagerFlags.TranslucentStatus);
-            Window.SetStatusBarColor(new Android.Graphics.Color(color));
-        }
 
         /// <summary>
         ///     Обработчик кнопки настроект
