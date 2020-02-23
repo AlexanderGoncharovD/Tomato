@@ -1,3 +1,4 @@
 .vs
 app/Tomato/obj
 src/Tomato.Timer/obj
+**/bin

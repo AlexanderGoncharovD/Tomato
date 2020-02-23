@@ -4108,46 +4108,19 @@ namespace Tomato
 		{
 			
 			// aapt resource value: 0x7F0D0000
-			public const int baseline_settings_white_18 = 2131558400;
+			public const int baseline_settings_white_36 = 2131558400;
 			
 			// aapt resource value: 0x7F0D0001
-			public const int baseline_settings_white_24 = 2131558401;
+			public const int ic_launcher = 2131558401;
 			
 			// aapt resource value: 0x7F0D0002
-			public const int baseline_settings_white_36 = 2131558402;
+			public const int ic_launcher_foreground = 2131558402;
 			
 			// aapt resource value: 0x7F0D0003
-			public const int baseline_settings_white_48 = 2131558403;
+			public const int ic_launcher_round = 2131558403;
 			
 			// aapt resource value: 0x7F0D0004
-			public const int ic_action_content_create = 2131558404;
-			
-			// aapt resource value: 0x7F0D0005
-			public const int ic_action_content_save = 2131558405;
-			
-			// aapt resource value: 0x7F0D0006
-			public const int ic_launcher = 2131558406;
-			
-			// aapt resource value: 0x7F0D0007
-			public const int ic_launcher_foreground = 2131558407;
-			
-			// aapt resource value: 0x7F0D0008
-			public const int ic_launcher_round = 2131558408;
-			
-			// aapt resource value: 0x7F0D0009
-			public const int ic_menu_copy_holo_dark = 2131558409;
-			
-			// aapt resource value: 0x7F0D000A
-			public const int ic_menu_cut_holo_dark = 2131558410;
-			
-			// aapt resource value: 0x7F0D000B
-			public const int ic_menu_paste_holo_dark = 2131558411;
-			
-			// aapt resource value: 0x7F0D000C
-			public const int ic_menu_search_holo_dark = 2131558412;
-			
-			// aapt resource value: 0x7F0D000D
-			public const int tomat = 2131558413;
+			public const int tomat = 2131558404;
 			
 			static Mipmap()
 			{

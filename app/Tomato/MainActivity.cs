@@ -16,6 +16,7 @@ namespace Tomato
         private TextView lbl;
         private TomatoTimer.TomatoTimer Timer;
         private bool _isVibration = false;
+        private Button _startButton;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -30,18 +31,18 @@ namespace Tomato
             SetStatusBarColor();
             
             lbl = FindViewById<TextView>(Resource.Id.lbl);
-            var start = FindViewById<Button>(Resource.Id.start_button);
+            _startButton = FindViewById<Button>(Resource.Id.start_button);
             var pause = FindViewById<Button>(Resource.Id.pause_button);
             var stop = FindViewById<Button>(Resource.Id.stop_button);
 
-            start.Click += Start_Click;
+            _startButton.Click += Start_Click;
             pause.Click += Pause_Click;
             stop.Click += Stop_Click;
 
             var settings = FindViewById<ImageButton>(Resource.Id.settings_button);
             settings.Click += SettingsButton_Click;
 
-            Timer = new TomatoTimer.TomatoTimer(90);
+            Timer = new TomatoTimer.TomatoTimer();
             Timer.TimerTick += OnTimerTick;
             Timer.TimerLeft += OnTimerLeft;
 
@@ -64,10 +65,7 @@ namespace Tomato
                 _isVibration = false;
                 Xamarin.Essentials.Vibration.Cancel();
             }
-            else
-            {
-                Timer.Stop();
-            }
+            Timer.Stop();
         }
 
         private void Pause_Click(object sender, EventArgs e)
@@ -77,7 +75,7 @@ namespace Tomato
 
         private void Start_Click(object sender, EventArgs e)
         {
-            Timer.Start();
+            Timer.Start(15);
         }
 
         /// <summary>
@@ -86,6 +84,7 @@ namespace Tomato
         private void OnTimerTick(object sender, EventArgs e)
         {
             lbl.Text = $"{Timer.Minutes}:{Timer.Seconds}";
+            _startButton.Enabled = !Timer.IsTimerStarted;
         }
 
         /// <summary>

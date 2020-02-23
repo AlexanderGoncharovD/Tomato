@@ -35,6 +35,11 @@ namespace Tomato.TomatoTimer
         /// </summary>
         private int Time { get => _time; set { _time = value;  SetTimeLeft(value);  } }
 
+        /// <summary>
+        ///     Запущен ли таймер
+        /// </summary>
+        public bool IsTimerStarted { get => _tiker; }
+
         #endregion
 
         #region Events
@@ -56,19 +61,27 @@ namespace Tomato.TomatoTimer
         /// <summary>
         ///     Конструктор таймера
         /// </summary>
-        public TomatoTimer(int seconds)
-        {
-            _time = seconds;
-        }
+        public TomatoTimer() { }
 
         #endregion
 
         #region Public Methods
 
-        public void Start()
+        /// <summary>
+        ///     Запустить таймер
+        /// </summary>
+        /// <param name="seconds">
+        ///     Количество секунд таймера
+        /// </param>
+        public void Start(int seconds)
         {
-            _tiker = true;
-            StartTimer();
+            if (!_tiker)
+            {
+                _time = seconds;
+                Time = _time;
+                _tiker = true;
+                StartTimer();
+            }
         }
 
         /// <summary>
@@ -84,12 +97,15 @@ namespace Tomato.TomatoTimer
         /// <summary>
         ///     Поставить таймер на паузу
         /// </summary>
-        public void Pause() => _tiker = false;
+        public void Pause()
+        {
+            _tiker = !_tiker;
 
-        /// <summary>
-        ///     Продолжить таймер
-        /// </summary>
-        public void Resume() => _tiker = true;
+            if (_tiker)
+            {
+                StartTimer();
+            }
+        }
 
         #endregion
 
@@ -102,13 +118,12 @@ namespace Tomato.TomatoTimer
         {
             while (_tiker)
             {
-                Time--;
                 TimerTick?.Invoke(this, EventArgs.Empty);
-
-                if (Time == 0)
-                    TimeLeft();
+                if (Time <= 0)
+                        TimeLeft();
                 else
                     await Task.Delay(1000);
+                Time--;
             }
         }
 
@@ -139,6 +154,8 @@ namespace Tomato.TomatoTimer
         private void TimeLeft()
         {
             _tiker = false;
+            _time = 0;
+            Time = 0;
             TimerLeft?.Invoke(this, EventArgs.Empty);
         }
 
