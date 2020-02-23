@@ -8,6 +8,7 @@ using Android.Views;
 using Xamarin.Essentials;
 using System.Threading.Tasks;
 using Tomato.Settings;
+using Android.Content;
 
 namespace Tomato
 {
@@ -103,8 +104,8 @@ namespace Tomato
         /// </summary>
         private void SettingsButton_Click(object secnder, EventArgs e)
         {
-            Toast.MakeText(this, "Action selected: Settings",
-                ToastLength.Short).Show();
+            var intent = new Intent(this, typeof(SettingsActivity));
+            StartActivity(intent);
         }
 
         /// <summary>
